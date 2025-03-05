@@ -3,6 +3,9 @@ server:
   shutdown : GRACEFUL
 
 management:
+  info:
+    git:
+      mode: FULL
   endpoints:
     web:
       exposure:
@@ -10,10 +13,6 @@ management:
 
 spring:
   datasource:
-    url : jdbc:h2:mem:testdb
-    driver-class-name: org.h2.Driver
-    username : sa
-    password : password
-  h2:
-    console:
-      enabled : true
+    url: ${DB_URL:jdbc:postgresql://localhost:15432/postgres}
+    username: ${DB_NAME:admin}
+    password: ${DB_PWD:admin}}

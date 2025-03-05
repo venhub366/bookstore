@@ -1,0 +1,22 @@
+version: "3.8"
+name: "bookstore-ms-webapp"
+services:
+  catalog-service-db:
+    image: postgres:16-alpine
+    container_name: catalog-service-db-container
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_DB=postgres
+      - POSTGRES_HOST_AUTH_METHOD=trust
+    ports:
+      - "15432:5432"
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U postgres" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    deploy:
+      resources:
+        limits:
+          memory: 500m
