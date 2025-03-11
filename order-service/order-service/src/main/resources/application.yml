@@ -1,0 +1,20 @@
+server:
+  port: 3035
+  shutdown: gracefulḥ
+spring:
+  jpa:
+    open-in-view: false
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:15432/bookstore}
+    username: ${DB_NAME:admin}
+    password: ${DB_PWD:admin}}
+  application:
+    name: order-service
+management:
+  info:
+    git:
+      mode: full
+  endpoints:
+    web:
+      exposure:
+        include: '*'

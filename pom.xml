@@ -17,6 +17,7 @@
     </properties>
     <modules>
         <module>catalog-service/catalog-service</module>
+        <module>order-service/order-service</module>
     </modules>
     <build>
         <plugins>
@@ -25,19 +26,19 @@
                 <artifactId>spotless-maven-plugin</artifactId>
                 <version>2.43.0</version>
                 <configuration>
-                    <java>
+                    <!--<java>
                         <importOrder/>
                         <removeUnusedImports/>
                         <googleJavaFormat>
                             <version>1.21.0
-                            </version>                      <!-- optional, 1.8 is the minimum supported version for Java 11 -->
-                            <style>GOOGLE</style>                       <!-- or AOSP (optional) -->
-                            <reflowLongStrings>true</reflowLongStrings> <!-- optional -->
-                            <formatJavadoc>false</formatJavadoc>        <!-- optional -->
-                            <!-- optional: custom group artifact (you probably don't need this) -->
+                            </version>                      &lt;!&ndash; optional, 1.8 is the minimum supported version for Java 11 &ndash;&gt;
+                            <style>GOOGLE</style>                       &lt;!&ndash; or AOSP (optional) &ndash;&gt;
+                            <reflowLongStrings>true</reflowLongStrings> &lt;!&ndash; optional &ndash;&gt;
+                            <formatJavadoc>false</formatJavadoc>        &lt;!&ndash; optional &ndash;&gt;
+                            &lt;!&ndash; optional: custom group artifact (you probably don't need this) &ndash;&gt;
                             <groupArtifact>com.google.googlejavaformat:google-java-format</groupArtifact>
                         </googleJavaFormat>
-                    </java>
+                    </java>-->
                 </configuration>
                 <executions>
                     <execution>

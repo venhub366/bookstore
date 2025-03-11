@@ -1,0 +1,22 @@
+1. Add all dependencies
+2. Add the custom images the TestcontainersConfiguration class
+3. Convert application.properties to yml
+4. Start the TestcontainersConfiguration and test the actuator
+5. Add actuator endpoints enablement
+6. Add maven build info service to order service pom.xml
+7. Add git commit id maven plugin to order service pom.xml
+8. Validate C:\Apps\2024\ZTM\bookstore-ms-app\order-service\order-service\target\classes\git.properties
+9. Run the app and check info via actuator end point
+10.Post validation custiomize the git maven plugin to show only necessary props
+11. Add git info mode in aaplicatopn.yml
+12. Add open doc maven dependency for swagger  in orders pom.xml
+13. Add the maven dep for rest assured  in orders pom.xml
+14. Add the spotless maven plugin in orders pom.xml
+15. To run the OrderServiceApplicationTests add the following config
+    15.1 If TestcontainersConfiguration class is not present create the test config class
+    15.2 Add the PostgreSQLContainer and RabbitMQContainer bean service connection
+    15.3 In OrderServiceApplicationTests import TestcontainersConfiguration
+    15.4 TestOrderServiceApplication use the TestcontainersConfiguration
+16. Add the postgres config and rabbitmq config in the orders application.yml
+17. Add the service details for order service in infra_dev.yml file
+18. Create a order-service.yml under github/workflows

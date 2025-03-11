@@ -1,0 +1,26 @@
+server:
+  port: 3034
+  shutdown: GRACEFUL
+
+management:
+  info:
+    git:
+      mode: FULL
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+springdoc:
+  api-docs:
+    path: /api-docs
+    enabled: true
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui.html
+spring:
+  jpa:
+    open-in-view: false
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:15432/bookstore}
+    username: ${DB_NAME:admin}
+    password: ${DB_PWD:admin}}

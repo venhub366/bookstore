@@ -1,0 +1,39 @@
+  on:
+  jobs:name: Order Service
+
+on:
+  push:
+    paths:
+      - order-service/**
+    branches:
+      - "main"
+      - "release"
+  pull_request:
+    branches:
+      - "main"
+
+jobs:
+  build:
+    name: Build Order Service
+    runs-on: ubuntu-latest
+    env:
+      working-directory: ./order-service/.order-service
+      DOCKER_IMAGE_NAME: ${{ secrets.DOCKERHUB_USERNAME }}/bookstore-order-service
+    defaults:
+      run:
+        working-directory: ${{ env.working-directory }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Java 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+          cache: 'maven'
+
+      - name: Make Maven wrapper executable
+        run: chmod +x mvnw
+
+      - name: Build with Maven
+        run: ./mvnw -ntp verify

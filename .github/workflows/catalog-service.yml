@@ -5,13 +5,14 @@ on:
     paths:
       - catalog-service/catalog-service/**
     branches:
-      - '**'
+      - "main"
+      - "release"
   pull_request:
     branches: [ main ]
 
 jobs:
   build:
-    name: Build
+    name: Build Catalog Service
     runs-on: ubuntu-latest
     env:
       working-directory: ./catalog-service/.catalog-service

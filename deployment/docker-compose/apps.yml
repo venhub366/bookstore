@@ -1,0 +1,21 @@
+#version: "3.8"
+name: "bookstore-ms"
+services:
+  catalog-service:
+    image: vkumaras366/bookstore-catalog-service
+    container_name: catalog-service
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - DB_URL=jdbc:postgresql://catalog-service-db:5432/bookstore
+      - DB_USERNAME=admin
+      - DB_PASSWORD=admin
+    ports:
+      - "3034:3034"
+    restart: unless-stopped
+    depends_on:
+      catalog-service-db:
+        condition: service_healthy
+    deploy:
+      resources:
+        limits:
+          memory: 700m
