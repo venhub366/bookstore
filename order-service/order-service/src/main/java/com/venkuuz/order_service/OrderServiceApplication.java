@@ -5,7 +5,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * @author : Venkuuz
- * @version : order-service-01
  */
 @SpringBootApplication
 public class OrderServiceApplication {
