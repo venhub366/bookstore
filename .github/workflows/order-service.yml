@@ -1,5 +1,4 @@
-  on:
-  jobs:name: Order Service
+name: Order Service
 
 on:
   push:
