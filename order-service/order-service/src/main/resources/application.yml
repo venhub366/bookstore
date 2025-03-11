@@ -1,6 +1,6 @@
 server:
   port: 3035
-  shutdown: gracefulḥ
+  shutdown: graceful
 spring:
   jpa:
     open-in-view: false
