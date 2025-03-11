@@ -7,7 +7,7 @@ on:
       - order-service/**
     branches:
       - "main"
-      - "release"
+      - "release/**"
   pull_request:
     branches:
       - "main"
